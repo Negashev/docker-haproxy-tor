@@ -1,8 +1,7 @@
 FROM alpine
 
-RUN apk add tor --update-cache --repository http://dl-4.alpinelinux.org/alpine/edge/testing/ --allow-untrusted haproxy ruby
-
-RUN apk --update add --virtual build-dependencies ruby-bundler ruby-dev ruby-nokogiri \
+RUN apk --update add tor haproxy ruby \
+  && apk --update add --virtual build-dependencies ruby-bundler ruby-dev ruby-nokogiri \
   && gem install --no-ri --no-rdoc socksify \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
