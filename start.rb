@@ -132,7 +132,7 @@ module Service
     alias_method :port, :tor_port
 
     def test_url
-      ENV['test_url'] || 'http://echoip.com/'
+      ENV['test_url'] || 'https://api.ipify.org'
     end
 
     def working?
