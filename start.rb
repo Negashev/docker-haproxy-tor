@@ -210,7 +210,7 @@ loop do
     $logger.info "testing proxy #{proxy.id} (port #{proxy.port})"
     proxy.restart unless proxy.working?
     $logger.info "sleeping for #{tor_instances} seconds"
-    sleep tor_instances
+    sleep Integer(tor_instances)
   end
 
   $logger.info "sleeping for 60 seconds"
